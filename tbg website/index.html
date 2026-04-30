@@ -1,0 +1,2146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TBG Support Services — Facilities, Transport &amp; Accommodation in Iraq</title>
+
+  <!-- SEO -->
+  <meta name="description" content="TBG Support Services Ltd — a family-owned Iraqi company delivering facilities management, vehicle maintenance &amp; transport, and secure accommodation to international organisations since 2008." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="TBG Support Services — Facilities, Transport &amp; Accommodation in Iraq" />
+  <meta property="og:description" content="Family-owned Iraqi company delivering facilities management, transport, and secure accommodation to international organisations since 2008." />
+  <meta property="og:image"       content="brand_assets/TBG-Logo-Full.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Inter:wght@300;400;500;600&family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ══════════════════════════════════════════════════════
+       DESIGN TOKENS
+       Edit these values to retheme the entire site.
+       All colours, spacing, and type decisions flow from here.
+    ══════════════════════════════════════════════════════ */
+    :root {
+      /* Brand colours */
+      --gold:        #B8860B;
+      --gold-lt:     #D4A017;   /* primary CTA / badge colour */
+      --gold-hover:  #E8B822;   /* hover state for gold buttons */
+      --gold-bg:     rgba(184,134,11,0.12);
+
+      /* Dark-mode surface stack (darkest → lightest) */
+      --off-3:    #0A0B0E;   /* nav bg, darkest sections */
+      --off-2:    #0D0E11;   /* body background, sec-off */
+      --off:      #111316;   /* sec-white (slightly lighter dark sections) */
+      --surface:  #161820;   /* card / input background */
+      --navy:     #0B1F3A;   /* footer, accent overlays */
+      --navy-2:   #102248;
+
+      /* Text */
+      --white:    #FFFFFF;
+      --text:     #DDE2EE;
+      --text-2:   #7E8BA8;
+      --text-3:   #4A5570;
+
+      /* Borders */
+      --border:   #1C1F2C;
+      --border-2: #242740;
+
+      /* Shadows */
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.30);
+      --shadow-md: 0 8px 32px rgba(0,0,0,0.40);
+      --shadow-lg: 0 20px 60px rgba(0,0,0,0.55);
+
+      /* Typography */
+      --font-head: 'DM Sans', 'Cairo', sans-serif;
+      --font-body: 'Inter', 'Cairo', sans-serif;
+
+      /* Shape */
+      --r: 4px;
+    }
+
+    /* ══════════════════════════════════════════════════════
+       RESET & BASE
+    ══════════════════════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--off-2);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a   { color: inherit; text-decoration: none; }
+
+    /* ══════════════════════════════════════════════════════
+       TYPOGRAPHY UTILITIES
+    ══════════════════════════════════════════════════════ */
+    .display { font-family: var(--font-head); font-weight: 800; line-height: 1.0;  letter-spacing: -0.03em; }
+    .heading  { font-family: var(--font-head); font-weight: 700; line-height: 1.1;  letter-spacing: -0.02em; }
+    .label    { font-family: var(--font-body); font-weight: 600; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; }
+    .body     { font-family: var(--font-body); font-weight: 400; line-height: 1.75; }
+    .lead     { font-family: var(--font-body); font-weight: 400; line-height: 1.65; font-size: 1.0625rem; }
+
+    /* ══════════════════════════════════════════════════════
+       LAYOUT UTILITIES
+    ══════════════════════════════════════════════════════ */
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+    @media (max-width: 768px) { .container { padding: 0 20px; } }
+
+    /* ── Scroll reveal ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+    }
+    .reveal.reveal-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.08s; }
+    .reveal-delay-2 { transition-delay: 0.16s; }
+    .reveal-delay-3 { transition-delay: 0.24s; }
+    .reveal-delay-4 { transition-delay: 0.32s; }
+    .reveal-delay-5 { transition-delay: 0.40s; }
+
+    /* Disable all animations when user prefers reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+
+    /* ══════════════════════════════════════════════════════
+       SCROLLBAR
+    ══════════════════════════════════════════════════════ */
+    ::-webkit-scrollbar       { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--off); }
+    ::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 3px; }
+
+    /* ══════════════════════════════════════════════════════
+       COMPONENT: NAVIGATION
+    ══════════════════════════════════════════════════════ */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      background: rgba(10,11,14,0.97);
+      border-bottom: 1px solid transparent;
+      backdrop-filter: blur(12px);
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    #navbar.scrolled {
+      border-color: var(--border);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.4);
+    }
+    .nav-inner {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .logo-wrap { display: flex; align-items: center; flex-shrink: 0; }
+
+    /* Gold badge — shared by nav + footer logos */
+    .logo-badge {
+      display: inline-flex;
+      align-items: center;
+      background: var(--gold-lt);
+      border-radius: var(--r);
+    }
+    .logo-badge img {
+      display: block;
+      /* Shifts the logo's original #f7d147 yellow → #D4A017 brand gold */
+      filter: sepia(0.4) saturate(1.8) brightness(0.88) hue-rotate(-5deg);
+    }
+    .logo-badge-nav  { padding: 6px 12px; }
+    .logo-badge-nav img { height: 38px; width: auto; }
+
+    .nav-links { display: flex; align-items: center; gap: 8px; }
+    .nav-link {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-2);
+      padding: 8px 14px;
+      border-radius: var(--r);
+      white-space: nowrap;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-link:hover        { color: var(--white); background: rgba(255,255,255,0.06); }
+    .nav-link:focus-visible { outline: 2px solid var(--gold-lt); outline-offset: 2px; }
+    .nav-link.nav-active   { color: var(--gold-lt); }
+
+    .nav-actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+
+    .btn-lang {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-2);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      padding: 8px 14px;
+      border-radius: var(--r);
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .btn-lang:hover        { color: var(--white); border-color: rgba(255,255,255,0.3); }
+    .btn-lang:focus-visible { outline: 2px solid var(--gold-lt); outline-offset: 2px; }
+
+    .btn-cta-nav {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--off-3);
+      background: var(--gold-lt);
+      padding: 10px 22px;
+      border-radius: var(--r);
+      white-space: nowrap;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-cta-nav:hover        { background: var(--gold-hover); transform: translateY(-1px); }
+    .btn-cta-nav:active       { transform: none; }
+    .btn-cta-nav:focus-visible { outline: 2px solid var(--gold-lt); outline-offset: 3px; }
+
+    /* Hamburger (mobile only) */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px; height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transform-origin: center;
+      transition: transform 0.25s, opacity 0.25s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .hamburger:focus-visible { outline: 2px solid var(--gold-lt); outline-offset: 2px; border-radius: var(--r); }
+
+    /* Mobile nav panel */
+    #mobile-nav {
+      display: none;
+      position: fixed;
+      top: 72px; left: 0; right: 0; bottom: 0;
+      background: var(--off-3);
+      z-index: 199;
+      flex-direction: column;
+      padding: 24px 20px 48px;
+      border-top: 1px solid var(--border);
+      overflow-y: auto;
+    }
+    #mobile-nav.open { display: flex; }
+    .mob-link {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--text-2);
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.2s;
+    }
+    .mob-link:hover { color: var(--gold-lt); }
+    .mob-cta {
+      margin-top: 28px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--off-3);
+      background: var(--gold-lt);
+      padding: 16px 24px;
+      border-radius: var(--r);
+      text-align: center;
+      transition: background 0.2s;
+    }
+    .mob-cta:hover { background: var(--gold-hover); }
+    .mob-lang {
+      margin-top: 16px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-2);
+      background: var(--off);
+      border: 1px solid var(--border);
+      padding: 12px 20px;
+      border-radius: var(--r);
+      cursor: pointer;
+      align-self: flex-start;
+    }
+
+    /* ══════════════════════════════════════════════════════
+       SECTION: HERO
+    ══════════════════════════════════════════════════════ */
+    #hero {
+      background: var(--navy);
+      padding-top: 72px; /* matches nav height */
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Thin gold accent bar below nav */
+    #hero::after {
+      content: '';
+      position: absolute;
+      top: 72px; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(to right, var(--gold), transparent 60%);
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    /* WebGL canvas fills the full hero */
+    #hero-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
+      display: block;
+    }
+
+    .hero-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 0 60px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Service chips above headline */
+    .hero-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
+    .hero-chip {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(212,160,23,0.85);
+      border: 1px solid rgba(212,160,23,0.22);
+      background: rgba(212,160,23,0.07);
+      padding: 5px 11px;
+      border-radius: 2px;
+    }
+
+    /* Gold left-border headline wrap */
+    .hero-headline-wrap {
+      border-left: 3px solid var(--gold);
+      padding-left: 24px;
+      margin-bottom: 28px;
+    }
+    .hero-headline-wrap .hero-title { margin-bottom: 0; }
+
+    .hero-title {
+      font-size: clamp(2.6rem, 4.5vw, 4.8rem);
+      color: var(--white);
+      max-width: 780px;
+      margin-bottom: 28px;
+      line-height: 1.0;
+    }
+    .hero-title .accent { color: var(--gold-lt); }
+
+    .hero-sub {
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+      color: rgba(255,255,255,0.55);
+      max-width: 500px;
+      line-height: 1.75;
+      margin-bottom: 48px;
+      font-weight: 400;
+    }
+
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    /* Two-column grid: left = text, right = panel */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 64px;
+      align-items: center;
+    }
+    @media (max-width: 1100px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+    }
+
+    /* Right info panel */
+    .hero-panel {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 6px;
+      padding: 30px;
+      backdrop-filter: blur(10px);
+    }
+    .hero-panel-header {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding-bottom: 18px;
+      margin-bottom: 4px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .hpi {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .hpi:last-of-type { border-bottom: none; }
+    .hpi-num {
+      font-family: var(--font-head);
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--gold-lt);
+      opacity: 0.55;
+      letter-spacing: 0.06em;
+      flex-shrink: 0;
+      padding-top: 2px;
+      width: 22px;
+    }
+    .hpi-title { font-family: var(--font-head); font-size: 0.875rem; font-weight: 600; color: rgba(255,255,255,0.92); margin-bottom: 5px; line-height: 1.3; }
+    .hpi-sub   { font-size: 0.70rem; color: rgba(255,255,255,0.35); letter-spacing: 0.03em; line-height: 1.5; }
+
+    .hero-panel-iso {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .hero-panel-iso span {
+      font-size: 0.60rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.30);
+      border: 1px solid rgba(255,255,255,0.10);
+      padding: 4px 8px;
+      border-radius: 2px;
+    }
+
+    /* Stats bar at hero bottom */
+    .hero-stats {
+      background: rgba(255,255,255,0.05);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(4px);
+      padding: 32px 0;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-stats-inner { display: flex; align-items: center; }
+    .stat-item {
+      flex: 1;
+      text-align: center;
+      padding: 0 24px;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-n {
+      font-family: var(--font-head);
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+    .stat-n span { color: var(--gold-lt); }
+    .stat-l {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 8px;
+      line-height: 1.4;
+    }
+
+    /* ══════════════════════════════════════════════════════
+       SHARED SECTION UTILITIES
+       Used across About, Clients, Certifications, etc.
+    ══════════════════════════════════════════════════════ */
+    .sec { padding: clamp(80px, 10vw, 128px) 0; }
+
+    /* Section background variants */
+    .sec-white { background: var(--off);   }
+    .sec-off   { background: var(--off-2); }
+    .sec-navy  { background: var(--off-3); }
+
+    /* Section label: gold line + uppercase tag */
+    .sec-label      { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+    .sec-label-line { width: 28px; height: 2px; background: var(--gold); border-radius: 2px; flex-shrink: 0; }
+
+    .sec-title {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--white);
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .sec-subtitle { font-size: 1rem; color: var(--text-2); line-height: 1.7; max-width: 520px; }
+    .sec-header   { margin-bottom: 64px; }
+
+    /* ══════════════════════════════════════════════════════
+       COMPONENT: BUTTONS
+       btn-primary  — solid gold, used site-wide
+       btn-outline  — ghost/border variant for hero
+    ══════════════════════════════════════════════════════ */
+    .btn-primary {
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--off-3);
+      background: var(--gold-lt);
+      padding: 14px 32px;
+      border-radius: var(--r);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover        { background: var(--gold-hover); transform: translateY(-2px); }
+    .btn-primary:active       { transform: none; }
+    .btn-primary:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+    .btn-outline {
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: rgba(255,255,255,0.8);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 14px 32px;
+      border-radius: var(--r);
+      transition: border-color 0.2s, color 0.2s, transform 0.15s;
+    }
+    .btn-outline:hover        { border-color: rgba(255,255,255,0.5); color: var(--white); transform: translateY(-2px); }
+    .btn-outline:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+    /* ══════════════════════════════════════════════════════
+       SECTION: ABOUT
+    ══════════════════════════════════════════════════════ */
+    .about-grid { display: grid; grid-template-columns: 5fr 4fr; gap: 80px; align-items: center; }
+
+    .about-img-wrap { position: relative; border-radius: 6px; overflow: hidden; }
+    .about-img-wrap img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+
+    /* Logo variant — gold card with About Us header + logo */
+    .about-img-wrap--logo { background: var(--gold-lt); aspect-ratio: 4/3; display: flex; flex-direction: column; }
+    .about-logo-header {
+      padding: 32px 36px 0;
+    }
+    .about-logo-header .alu-label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.45);
+      margin-bottom: 6px;
+    }
+    .about-logo-header .alu-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: #111;
+    }
+    .about-logo-header .alu-sub {
+      margin-top: 8px;
+      font-size: 0.82rem;
+      color: rgba(0,0,0,0.55);
+      line-height: 1.6;
+    }
+    .about-logo-display {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 48px 16px;
+      box-sizing: border-box;
+    }
+    .about-logo-badge {
+      width: 100%;
+    }
+    .about-logo-badge img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: auto;   /* override .about-img-wrap img 4/3 forced ratio */
+      object-fit: initial;  /* override object-fit: cover */
+    }
+
+    .about-img-badge {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(11,31,58,0.92) 0%, transparent 100%);
+      padding: 40px 28px 28px;
+    }
+    .about-img-badge-inner { display: flex; gap: 32px; }
+    .aib-num       { font-family: var(--font-head); font-size: 2rem; font-weight: 800; color: var(--white); line-height: 1; }
+    .aib-num span  { color: var(--gold-lt); }
+    .aib-label     { font-size: 0.72rem; font-weight: 500; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px; }
+
+    .about-values { margin-top: 40px; display: flex; flex-direction: column; }
+    .av-item {
+      display: flex;
+      gap: 20px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .av-item:first-child { border-top: 1px solid var(--border); }
+    .av-icon {
+      width: 40px; height: 40px;
+      background: var(--gold-bg);
+      border: 1px solid rgba(184,134,11,0.2);
+      border-radius: var(--r);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .av-title { font-family: var(--font-head); font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+    .av-body  { font-size: 0.875rem; color: var(--text-2); line-height: 1.7; }
+
+    /* ══════════════════════════════════════════════════════
+       SECTION: SERVICES
+       Full-width alternating image + content strips.
+       No .container wrapper — images bleed edge-to-edge.
+    ══════════════════════════════════════════════════════ */
+
+    /* Section intro (inside a container above the strips) */
+    .svc-section-header { padding: 64px 0 48px; }
+
+    .svc-strip { display: grid; grid-template-columns: 1fr 1fr; min-height: 520px; }
+    /* Reverse order without changing DOM */
+    .svc-strip.reverse     { direction: rtl; }
+    .svc-strip.reverse > * { direction: ltr; }
+
+    .svc-img-col { position: relative; overflow: hidden; min-height: 480px; }
+    .svc-img-col img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .svc-strip:hover .svc-img-col img { transform: scale(1.03); }
+
+    .svc-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(11,31,58,0.25) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .svc-num-badge {
+      position: absolute;
+      top: 28px; left: 28px;
+      font-family: var(--font-head);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--white);
+      background: var(--gold);
+      padding: 6px 12px;
+      border-radius: 2px;
+    }
+
+    .svc-content-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 72px 64px;
+    }
+    .svc-content-col.bg-white { background: var(--off);   }
+    .svc-content-col.bg-off   { background: var(--off-2); }
+
+    /* Fleet image: 3D render has white bg — match it so no seam shows */
+    .svc-img-col--fleet { background: #f2f1ef; }
+    .svc-img-col--fleet img { object-fit: cover; object-position: center 60%; }
+    .svc-img-col--fleet .svc-img-overlay { display: none; }
+
+    .svc-cat {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .svc-title {
+      font-family: var(--font-head);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+    .svc-desc { font-size: 0.9375rem; color: var(--text-2); line-height: 1.75; margin-bottom: 32px; }
+
+    .svc-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .svc-pill {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--text-2);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      padding: 7px 14px;
+      border-radius: 100px;
+    }
+    .svc-content-col.bg-off   .svc-pill { background: rgba(255,255,255,0.04); }
+    .svc-content-col.bg-white .svc-pill { background: rgba(255,255,255,0.06); border-color: var(--border-2); }
+
+    /* ══════════════════════════════════════════════════════
+       SECTION: CLIENTS
+    ══════════════════════════════════════════════════════ */
+    .cat-header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; margin-top: 56px; }
+    .cat-header:first-child { margin-top: 0; }
+    .cat-tag {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+    .cat-line { flex: 1; height: 1px; background: var(--border); }
+
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      overflow: hidden;
+    }
+    .logo-item {
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px 20px;
+      transition: background 0.2s;
+    }
+    .logo-item:hover { background: #1e2030; }
+    .logo-item img {
+      height: 36px;
+      width: auto;
+      max-width: 120px;
+      object-fit: contain;
+      filter: grayscale(1) invert(1) opacity(0.35);
+      transition: filter 0.3s;
+    }
+    .logo-item:hover img { filter: grayscale(0) invert(0) opacity(0.85); }
+    .logo-item-text {
+      font-family: var(--font-head);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-3);
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .logo-item:hover .logo-item-text { color: var(--text); }
+
+    /* ══════════════════════════════════════════════════════
+       SECTION: CERTIFICATIONS
+    ══════════════════════════════════════════════════════ */
+    .cert-inner { display: flex; align-items: center; gap: 48px; flex-wrap: wrap; }
+    .cert-copy  { flex: 1; min-width: 240px; }
+    .cert-copy .sec-title { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 12px; }
+    .cert-copy p { color: rgba(255,255,255,0.55); font-size: 0.9375rem; line-height: 1.7; }
+
+    .cert-badges { display: flex; gap: 16px; flex-wrap: wrap; }
+    .cert-badge {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: var(--r);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      width: 180px;
+      flex-shrink: 0;
+      cursor: pointer;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .cert-badge:hover        { border-color: rgba(212,160,23,0.5); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.4); }
+    .cert-badge:focus-visible { outline: 2px solid var(--gold-lt); outline-offset: 3px; }
+
+    .cert-badge-img { width: 100%; aspect-ratio: 3/4; overflow: hidden; background: var(--white); }
+    .cert-badge-img img { width: 100%; height: 100%; object-fit: contain; object-position: center; display: block; }
+    .cert-badge-foot { padding: 10px 12px; display: flex; flex-direction: column; gap: 2px; }
+    .cert-badge-num  { font-family: var(--font-head); font-size: 0.78rem; font-weight: 700; color: var(--gold-lt); }
+    .cert-badge-name { font-size: 0.65rem; color: rgba(255,255,255,0.4); letter-spacing: 0.06em; line-height: 1.4; }
+
+    /* ══════════════════════════════════════════════════════
+       SECTION: LOCATIONS
+    ══════════════════════════════════════════════════════ */
+    .loc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .loc-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 32px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
+    }
+    .loc-card:hover { border-color: var(--gold); box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    /* Animated gold top bar on hover */
+    .loc-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 3px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .loc-card:hover::before { transform: scaleX(1); }
+    .loc-number { font-family: var(--font-head); font-size: 4rem; font-weight: 800; color: var(--border); line-height: 1; margin-bottom: 24px; letter-spacing: -0.04em; user-select: none; }
+    .loc-city   { font-family: var(--font-head); font-size: 1.8rem; font-weight: 800; color: var(--white); letter-spacing: -0.02em; margin-bottom: 4px; }
+    .loc-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      background: rgba(184,134,11,0.12);
+      border: 1px solid rgba(184,134,11,0.22);
+      padding: 4px 10px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+    .loc-desc { font-size: 0.9rem; color: var(--text-2); line-height: 1.7; }
+
+    /* ══════════════════════════════════════════════════════
+       SECTION: CONTACT
+    ══════════════════════════════════════════════════════ */
+    .contact-grid { display: grid; grid-template-columns: 2fr 3fr; gap: 80px; align-items: start; }
+
+    .contact-methods { display: flex; flex-direction: column; gap: 24px; margin-top: 40px; }
+    .cm {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .cm:hover { border-color: var(--gold); box-shadow: var(--shadow-sm); }
+    .cm-icon {
+      width: 40px; height: 40px;
+      background: var(--navy);
+      border-radius: var(--r);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .cm-icon-wa   { background: #25D366; }
+    .cm-label     { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); margin-bottom: 4px; }
+    .cm-val       { font-size: 0.95rem; font-weight: 500; color: var(--white); transition: color 0.2s; }
+    a.cm-val:hover { color: var(--gold-lt); }
+
+    /* Contact form */
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .form-2col    { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .f-group      { display: flex; flex-direction: column; gap: 6px; }
+    .f-label      { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); }
+
+    .f-input, .f-select, .f-textarea {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 12px 16px;
+      outline: none;
+      width: 100%;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .f-input::placeholder, .f-textarea::placeholder { color: var(--text-3); }
+    .f-input:focus, .f-select:focus, .f-textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(184,134,11,0.12);
+    }
+    .f-select {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234A5570' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 40px;
+    }
+    .f-select option { background: var(--surface); color: var(--text); }
+    .f-textarea      { resize: vertical; min-height: 130px; line-height: 1.65; }
+
+    /* Honeypot — hidden from real users, traps bots */
+    .f-honeypot { display: none; }
+
+    .f-submit {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--off-3);
+      background: var(--gold-lt);
+      border: none;
+      padding: 14px 32px;
+      border-radius: var(--r);
+      cursor: pointer;
+      align-self: flex-start;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .f-submit:hover        { background: var(--gold-hover); transform: translateY(-1px); }
+    .f-submit:active       { transform: none; }
+    .f-submit:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+    .f-status { font-size: 0.8rem; color: var(--gold); display: none; margin-top: 4px; }
+
+    /* ══════════════════════════════════════════════════════
+       SECTION: FOOTER
+    ══════════════════════════════════════════════════════ */
+    footer { background: var(--navy); padding: 64px 0 32px; }
+
+    .foot-top {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr;
+      gap: 60px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 32px;
+    }
+
+    /* Footer logo: same .logo-badge class as nav, different padding */
+    .logo-badge-foot        { padding: 8px 14px; margin-bottom: 18px; }
+    .logo-badge-foot img    { height: 36px; width: auto; }
+
+    .foot-brand p    { font-size: 0.875rem; color: rgba(255,255,255,0.4); line-height: 1.75; max-width: 300px; }
+    .foot-col-title  { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 18px; }
+    .foot-links      { display: flex; flex-direction: column; gap: 12px; }
+    .foot-link       { font-size: 0.875rem; color: rgba(255,255,255,0.5); transition: color 0.2s; }
+    .foot-link:hover { color: rgba(255,255,255,0.9); }
+
+    .foot-bottom    { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .foot-copy      { font-size: 0.75rem; color: rgba(255,255,255,0.25); line-height: 1.6; }
+    .foot-iso       { display: flex; gap: 8px; flex-wrap: wrap; }
+    .foot-iso-badge {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.3);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 4px 8px;
+      border-radius: 2px;
+    }
+
+    /* ══════════════════════════════════════════════════════
+       COMPONENT: WHATSAPP FAB
+    ══════════════════════════════════════════════════════ */
+    #wa-fab {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      z-index: 9990;
+      width: 54px; height: 54px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4), 0 2px 8px rgba(0,0,0,0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    #wa-fab:hover { transform: scale(1.1) translateY(-2px); box-shadow: 0 8px 28px rgba(37,211,102,0.5), 0 2px 8px rgba(0,0,0,0.3); }
+
+    /* ══════════════════════════════════════════════════════
+       RTL — Arabic language overrides
+    ══════════════════════════════════════════════════════ */
+    html[lang="ar"] { --font-head: 'Almarai', sans-serif; --font-body: 'Almarai', sans-serif; }
+    html[lang="ar"] .display,
+    html[lang="ar"] .heading,
+    html[lang="ar"] .hero-title,
+    html[lang="ar"] .sec-title,
+    html[lang="ar"] .svc-title,
+    html[lang="ar"] .hero-chip { letter-spacing: 0; }
+    html[lang="ar"] #wa-fab           { right: auto; left: 28px; }
+    html[lang="ar"] .svc-num-badge    { left: auto; right: 28px; }
+    html[lang="ar"] .loc-card::before { transform-origin: right; }
+
+    /* ══════════════════════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .about-grid      { grid-template-columns: 1fr; gap: 48px; }
+      .svc-strip       { grid-template-columns: 1fr; min-height: auto; }
+      .svc-strip.reverse { direction: ltr; }
+      .svc-img-col     { min-height: 300px; }
+      .svc-content-col { padding: 48px 32px; }
+      .contact-grid    { grid-template-columns: 1fr; gap: 48px; }
+      .foot-top        { grid-template-columns: 1fr 1fr; }
+      .cert-inner      { flex-direction: column; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .btn-cta-nav { display: none; }
+      .hamburger { display: flex; }
+      .hero-stats-inner { flex-wrap: wrap; }
+      .stat-item {
+        flex: 1 1 40%;
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding: 16px;
+      }
+      .stat-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.1); }
+      .loc-grid  { grid-template-columns: 1fr; }
+      .form-2col { grid-template-columns: 1fr; }
+      .foot-top  { grid-template-columns: 1fr; gap: 36px; }
+      .logo-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════
+     SVG DEFS — utility filters (invisible, referenced by CSS/JS if needed)
+══════════════════════════════════════════════════════ -->
+<svg width="0" height="0" style="position:absolute;pointer-events:none" aria-hidden="true">
+  <defs>
+    <filter id="remove-white" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 -1 -1 -1 3 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+  </defs>
+</svg>
+
+<!-- ══════════════════════════════════════════════════════
+     NAV
+══════════════════════════════════════════════════════ -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+
+      <a href="#" class="logo-wrap" aria-label="TBG Support Services — home">
+        <div class="logo-badge logo-badge-nav">
+          <img src="brand_assets/TBG-Logo-Full.png" alt="TBG Support Services" />
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a href="#about"     class="nav-link" id="nl-about">About</a>
+        <a href="#services"  class="nav-link" id="nl-services">Services</a>
+        <a href="#clients"   class="nav-link" id="nl-clients">Clients</a>
+        <a href="#locations" class="nav-link" id="nl-locations">Locations</a>
+        <a href="#contact"   class="nav-link" id="nl-contact">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="btn-lang" id="lang-btn" aria-label="Switch language">عربي</button>
+        <a href="#contact" class="btn-cta-nav" id="nl-cta">Get in Touch</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════
+     MOBILE NAV
+══════════════════════════════════════════════════════ -->
+<div id="mobile-nav" role="dialog" aria-label="Mobile navigation">
+  <a href="#about"     class="mob-link" id="ml-about">About</a>
+  <a href="#services"  class="mob-link" id="ml-services">Services</a>
+  <a href="#clients"   class="mob-link" id="ml-clients">Clients</a>
+  <a href="#locations" class="mob-link" id="ml-locations">Locations</a>
+  <a href="#contact"   class="mob-link" id="ml-contact">Contact</a>
+  <a href="#contact"   class="mob-cta"  id="ml-cta">Get in Touch</a>
+  <button class="mob-lang" id="lang-btn-mob">عربي</button>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════════════ -->
+<section id="hero" aria-label="Hero">
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+  <div class="hero-content">
+    <div class="container">
+      <div class="hero-grid">
+
+        <!-- Left: headline + CTA -->
+        <div class="hero-left">
+          <div class="hero-chips">
+            <span class="hero-chip" id="hc-fm">Facilities Management</span>
+            <span class="hero-chip" id="hc-tr">Vehicle &amp; Transport</span>
+            <span class="hero-chip" id="hc-ac">Accommodation</span>
+          </div>
+          <div class="hero-headline-wrap">
+            <h1 class="display hero-title" id="h-title">
+              Essential Services<br/>for Businesses<br/><span class="accent">Operating in Iraq</span>
+            </h1>
+          </div>
+          <p class="hero-sub" id="h-sub">
+            A family-owned Iraqi company delivering facilities management, vehicle maintenance &amp; transport, and secure accommodation — so international organisations can focus on what matters.
+          </p>
+          <div class="hero-btns">
+            <a href="#services" class="btn-primary" id="h-btn-svc">
+              Our Services
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#contact" class="btn-outline" id="h-btn-contact">Get in Touch</a>
+          </div>
+        </div>
+
+        <!-- Right: division summary panel (hidden on mobile) -->
+        <div class="hero-right" aria-hidden="true">
+          <div class="hero-panel">
+            <div class="hero-panel-header" id="hp-label">Our Three Divisions</div>
+            <div class="hpi">
+              <div class="hpi-num">01</div>
+              <div>
+                <div class="hpi-title" id="hp-t1">Facilities Management</div>
+                <div class="hpi-sub"   id="hp-s1">HVAC · Electrical · Civil Works · Cleaning · Pest Control</div>
+              </div>
+            </div>
+            <div class="hpi">
+              <div class="hpi-num">02</div>
+              <div>
+                <div class="hpi-title" id="hp-t2">Vehicle Maintenance &amp; Transport</div>
+                <div class="hpi-sub"   id="hp-s2">Fleet Management · Logistics · Driver Services</div>
+              </div>
+            </div>
+            <div class="hpi">
+              <div class="hpi-num">03</div>
+              <div>
+                <div class="hpi-title" id="hp-t3">Secure Accommodation &amp; Office Leasing</div>
+                <div class="hpi-sub"   id="hp-s3">Baghdad · Basra · Conference · Warehousing</div>
+              </div>
+            </div>
+            <div class="hero-panel-iso">
+              <span>ISO 9001</span>
+              <span>ISO 14001</span>
+              <span>ISO 45001</span>
+              <span>ISO 22000</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Key stats bar -->
+  <div class="hero-stats" aria-label="Key figures">
+    <div class="container">
+      <div class="hero-stats-inner">
+        <div class="stat-item reveal reveal-delay-1">
+          <div class="stat-n">17<span>+</span></div>
+          <div class="stat-l" id="s-years">Years in Operation</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-2">
+          <div class="stat-n">3</div>
+          <div class="stat-l" id="s-divs">Service Divisions</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-3">
+          <div class="stat-n">4</div>
+          <div class="stat-l" id="s-iso">ISO Certifications</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-4">
+          <div class="stat-n">2</div>
+          <div class="stat-l" id="s-loc">Iraqi Cities</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     ABOUT
+══════════════════════════════════════════════════════ -->
+<section id="about" class="sec sec-white">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="about-img-wrap about-img-wrap--logo reveal">
+        <div class="about-logo-header">
+          <span class="alu-label" id="alu-label">About Us</span>
+          <div class="alu-title" id="alu-title">TBG Support<br>Services</div>
+          <div class="alu-sub" id="alu-sub">Founded 2008 — Family-owned, Iraq-based, globally trusted.</div>
+        </div>
+        <div class="about-logo-display">
+          <div class="about-logo-badge">
+            <img src="brand_assets/TBG-Logo-Full.png" alt="TBG Support Services" />
+          </div>
+        </div>
+        <div class="about-img-badge">
+          <div class="about-img-badge-inner">
+            <div>
+              <div class="aib-num">17<span>+</span></div>
+              <div class="aib-label" id="aib-l1">Years Operating</div>
+            </div>
+            <div>
+              <div class="aib-num">4</div>
+              <div class="aib-label" id="aib-l2">ISO Certified</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-2">
+        <div class="sec-label">
+          <span class="sec-label-line"></span>
+          <span class="label" style="color:var(--gold);" id="a-sec-label">About TBG</span>
+        </div>
+        <h2 class="sec-title" id="a-title">Local Roots.<br/>Global Standards.</h2>
+        <p class="lead" style="color:var(--text-2); margin-bottom:14px;" id="a-p1">
+          Founded in 2008 by two brothers amid a war-torn Iraq, TBG is a family-owned service company built on deep local knowledge and proven delivery for international clients.
+        </p>
+        <p style="font-size:0.9rem; color:var(--text-2); line-height:1.75;" id="a-p2">
+          TBG enjoys excellent knowledge of Iraq's local customs, logistics needs, and business environment — maintaining strong links with well-placed corporate entities for effective, timely service delivery.
+        </p>
+
+        <div class="about-values">
+          <div class="av-item">
+            <div class="av-icon" aria-hidden="true">
+              <svg width="18" height="18" fill="none" stroke="var(--gold)" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <div class="av-title" id="v1-t">Mission</div>
+              <div class="av-body"  id="v1-b">Best-in-class essential service support with professional dedication, enabling clients to focus on their core objectives.</div>
+            </div>
+          </div>
+          <div class="av-item">
+            <div class="av-icon" aria-hidden="true">
+              <svg width="18" height="18" fill="none" stroke="var(--gold)" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+            </div>
+            <div>
+              <div class="av-title" id="v2-t">Vision</div>
+              <div class="av-body"  id="v2-b">A leading service provider in a prosperous Iraq — investing in local employment and career development for Iraqi youth and women.</div>
+            </div>
+          </div>
+          <div class="av-item">
+            <div class="av-icon" aria-hidden="true">
+              <svg width="18" height="18" fill="none" stroke="var(--gold)" stroke-width="1.8" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <div>
+              <div class="av-title" id="v3-t">Values</div>
+              <div class="av-body"  id="v3-b">Respect, loyalty, responsibility, generosity, and hospitality — traditional Iraqi values at the core of every client engagement.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     SERVICES
+     Full-width alternating strips; no .container so images
+     bleed edge-to-edge. Section header is inside a container.
+══════════════════════════════════════════════════════ -->
+<section id="services">
+
+  <div class="container">
+    <div class="svc-section-header">
+      <div class="sec-label">
+        <span class="sec-label-line"></span>
+        <span class="label" style="color:var(--gold);" id="svc-sec-label">Our Services</span>
+      </div>
+      <h2 class="sec-title" id="svc-sec-title">Three Core Divisions</h2>
+      <p class="sec-subtitle" id="svc-sec-sub">Comprehensive turnkey solutions for international organisations across Iraq — each division staffed by specialists in their field.</p>
+    </div>
+  </div>
+
+  <!-- Service 1: Facilities Management -->
+  <div class="svc-strip reveal">
+    <div class="svc-img-col">
+      <img src="brand_assets/PHOTO-2026-04-21-16-22-05.jpg" alt="Facilities Management — TBG team on site" loading="lazy" />
+      <div class="svc-img-overlay"></div>
+      <div class="svc-num-badge">01</div>
+    </div>
+    <div class="svc-content-col bg-off">
+      <div class="svc-cat"   id="svc1-cat">Facilities Management</div>
+      <h3 class="svc-title"  id="svc1-title">Keeping Your<br/>Operations Running</h3>
+      <p class="svc-desc"    id="svc1-desc">From HVAC and electrical systems to full site renovation and professional cleaning — TBG FM professionals integrate people, places, and processes to improve productivity and ensure a safe, compliant environment.</p>
+      <div class="svc-pills">
+        <span class="svc-pill" id="svc1-p1">HVAC &amp; Power</span>
+        <span class="svc-pill" id="svc1-p2">Electrical Systems</span>
+        <span class="svc-pill" id="svc1-p3">Site Renovation</span>
+        <span class="svc-pill" id="svc1-p4">Professional Cleaning</span>
+        <span class="svc-pill" id="svc1-p5">Waste Management</span>
+        <span class="svc-pill" id="svc1-p6">Ground Maintenance</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service 2: Vehicle Maintenance & Transport -->
+  <div class="svc-strip reverse reveal">
+    <div class="svc-img-col svc-img-col--fleet">
+      <img src="brand_assets/vehicle-fleet.jpeg" alt="TBG vehicle fleet — SUVs, vans, and trucks" loading="lazy" />
+      <div class="svc-img-overlay"></div>
+      <div class="svc-num-badge">02</div>
+    </div>
+    <div class="svc-content-col bg-white">
+      <div class="svc-cat"   id="svc2-cat">Vehicle Maintenance &amp; Personal Transport</div>
+      <h3 class="svc-title"  id="svc2-title">Your Fleet.<br/>Your Schedule.</h3>
+      <p class="svc-desc"    id="svc2-desc">Full-spectrum fleet management, vehicle servicing, and professional personal transport across Iraq — ensuring your team moves safely, reliably, and on time, every time.</p>
+      <div class="svc-pills">
+        <span class="svc-pill" id="svc2-p1">Fleet Management</span>
+        <span class="svc-pill" id="svc2-p2">Vehicle Servicing</span>
+        <span class="svc-pill" id="svc2-p3">Personal Transport</span>
+        <span class="svc-pill" id="svc2-p4">Logistics Coordination</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service 3: Secure Accommodation & Office Leasing -->
+  <!-- TODO: replace placeholder with a real photo -->
+  <div class="svc-strip reveal">
+    <div class="svc-img-col">
+      <img src="https://placehold.co/800x520/0B1F3A/B8860B?text=Accommodation+%26+Offices" alt="Secure Accommodation and Office Leasing" loading="lazy" />
+      <div class="svc-img-overlay"></div>
+      <div class="svc-num-badge">03</div>
+    </div>
+    <div class="svc-content-col bg-off">
+      <div class="svc-cat"   id="svc3-cat">Secure Accommodation &amp; Office Leasing</div>
+      <h3 class="svc-title"  id="svc3-title">A Safe Base<br/>in Baghdad &amp; Basra</h3>
+      <p class="svc-desc"    id="svc3-desc">Market-leading secured, serviced residences and office spaces — complete with Wi-Fi, gym, warehousing, conference rooms, and secured parking. Everything your team needs to live and work comfortably in Iraq.</p>
+      <div class="svc-pills">
+        <span class="svc-pill" id="svc3-p1">Serviced Residences</span>
+        <span class="svc-pill" id="svc3-p2">Office Space</span>
+        <span class="svc-pill" id="svc3-p3">Conference Rooms</span>
+        <span class="svc-pill" id="svc3-p4">Warehousing</span>
+        <span class="svc-pill" id="svc3-p5">Secured Parking</span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     CLIENTS
+══════════════════════════════════════════════════════ -->
+<section id="clients" class="sec sec-white">
+  <div class="container">
+    <div class="sec-header">
+      <div class="sec-label">
+        <span class="sec-label-line"></span>
+        <span class="label" style="color:var(--gold);" id="cl-sec-label">Work Experience</span>
+      </div>
+      <h2 class="sec-title" id="cl-title">Trusted Since 2008</h2>
+      <p class="sec-subtitle" id="cl-sub">A long track record serving embassies, international businesses, defence contractors, NGOs, and oil &amp; gas companies across Iraq — organized by service category.</p>
+    </div>
+
+    <div class="cat-header">
+      <span class="cat-tag" id="cat1">Facilities Management &amp; Construction</span>
+      <span class="cat-line"></span>
+    </div>
+    <div class="logo-grid">
+      <div class="logo-item"><img src="brand_assets/clients/lukoil.png"  alt="Lukoil" /></div>
+      <div class="logo-item"><img src="brand_assets/clients/limak.png"   alt="LIMAK" /></div>
+      <div class="logo-item"><img src="brand_assets/clients/gd.jpeg"     alt="General Dynamics" /></div>
+      <div class="logo-item"><img src="brand_assets/clients/ctg.png"     alt="CTG" /></div>
+      <div class="logo-item"><span class="logo-item-text">British Embassy</span></div>
+      <div class="logo-item"><span class="logo-item-text">Saudi Embassy</span></div>
+    </div>
+
+    <div class="cat-header">
+      <span class="cat-tag" id="cat2">Vehicle Maintenance &amp; Transport</span>
+      <span class="cat-line"></span>
+    </div>
+    <div class="logo-grid">
+      <div class="logo-item"><img src="brand_assets/clients/gd.jpeg"     alt="General Dynamics" /></div>
+      <div class="logo-item"><img src="brand_assets/clients/kepi.png"    alt="Kepi" /></div>
+      <div class="logo-item"><img src="brand_assets/clients/optima.png"  alt="Optima" /></div>
+      <div class="logo-item"><img src="brand_assets/clients/ctg.png"     alt="CTG" /></div>
+      <div class="logo-item"><span class="logo-item-text">NATO</span></div>
+      <div class="logo-item"><span class="logo-item-text">OVL / MoD</span></div>
+    </div>
+
+    <div class="cat-header">
+      <span class="cat-tag" id="cat3">Business Support &amp; Life Support</span>
+      <span class="cat-line"></span>
+    </div>
+    <div class="logo-grid">
+      <div class="logo-item"><img src="brand_assets/clients/dhl.png"      alt="DHL" /></div>
+      <div class="logo-item"><img src="brand_assets/clients/pwc.png"      alt="PwC" /></div>
+      <div class="logo-item"><img src="brand_assets/clients/deakin.png"   alt="Deakin University" /></div>
+      <div class="logo-item"><img src="brand_assets/clients/moveone.png"  alt="Move One" /></div>
+      <div class="logo-item"><img src="brand_assets/clients/mtk.png"      alt="MTK Defense" /></div>
+      <div class="logo-item"><img src="brand_assets/clients/caliburn.png" alt="Caliburn" /></div>
+      <div class="logo-item"><img src="brand_assets/clients/amber.png"    alt="Amber" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     CERTIFICATIONS
+══════════════════════════════════════════════════════ -->
+<section id="certifications" class="sec sec-navy">
+  <div class="container">
+    <div class="cert-inner">
+
+      <div class="cert-copy">
+        <div class="sec-label" style="margin-bottom:16px;">
+          <span class="sec-label-line"></span>
+          <span class="label" style="color:rgba(184,134,11,0.8);" id="cert-label">Quality Assured</span>
+        </div>
+        <h2 class="sec-title" id="cert-title">ISO Certified to International Standards</h2>
+        <p id="cert-sub">TBG holds four active ISO certifications — covering quality management, environmental responsibility, occupational health &amp; safety, and food safety.</p>
+      </div>
+
+      <div class="cert-badges">
+        <div class="cert-badge reveal reveal-delay-1" tabindex="0" role="button" aria-label="ISO 9001:2015 Quality Management certificate" data-cert-img="brand_assets/iso-9001.png" data-cert-alt="ISO 9001:2015 Certificate">
+          <div class="cert-badge-img"><img src="brand_assets/iso-9001.png"  alt="ISO 9001:2015 Certificate"  loading="lazy" /></div>
+          <div class="cert-badge-foot">
+            <div class="cert-badge-num">ISO 9001:2015</div>
+            <div class="cert-badge-name" id="cname1">Quality Management</div>
+          </div>
+        </div>
+        <div class="cert-badge reveal reveal-delay-2" tabindex="0" role="button" aria-label="ISO 14001:2015 Environmental Management certificate" data-cert-img="brand_assets/iso-14001.png" data-cert-alt="ISO 14001:2015 Certificate">
+          <div class="cert-badge-img"><img src="brand_assets/iso-14001.png" alt="ISO 14001:2015 Certificate" loading="lazy" /></div>
+          <div class="cert-badge-foot">
+            <div class="cert-badge-num">ISO 14001:2015</div>
+            <div class="cert-badge-name" id="cname2">Environmental Management</div>
+          </div>
+        </div>
+        <div class="cert-badge reveal reveal-delay-3" tabindex="0" role="button" aria-label="ISO 45001:2018 Occupational Health and Safety certificate" data-cert-img="brand_assets/iso-45001.png" data-cert-alt="ISO 45001:2018 Certificate">
+          <div class="cert-badge-img"><img src="brand_assets/iso-45001.png" alt="ISO 45001:2018 Certificate" loading="lazy" /></div>
+          <div class="cert-badge-foot">
+            <div class="cert-badge-num">ISO 45001:2018</div>
+            <div class="cert-badge-name" id="cname3">Occupational Health &amp; Safety</div>
+          </div>
+        </div>
+        <div class="cert-badge reveal reveal-delay-4" tabindex="0" role="button" aria-label="ISO 22000:2018 Food Safety Management certificate" data-cert-img="brand_assets/iso-22000.png" data-cert-alt="ISO 22000:2018 Certificate">
+          <div class="cert-badge-img"><img src="brand_assets/iso-22000.png" alt="ISO 22000:2018 Certificate" loading="lazy" /></div>
+          <div class="cert-badge-foot">
+            <div class="cert-badge-num">ISO 22000:2018</div>
+            <div class="cert-badge-name" id="cname4">Food Safety Management</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     LOCATIONS
+══════════════════════════════════════════════════════ -->
+<section id="locations" class="sec sec-off">
+  <div class="container">
+    <div class="sec-header">
+      <div class="sec-label">
+        <span class="sec-label-line"></span>
+        <span class="label" style="color:var(--gold);" id="loc-label">Where We Operate</span>
+      </div>
+      <h2 class="sec-title" id="loc-title">Iraq-Wide Coverage</h2>
+    </div>
+    <div class="loc-grid">
+      <div class="loc-card reveal reveal-delay-1">
+        <div class="loc-number" aria-hidden="true">01</div>
+        <div class="loc-city" id="loc1-city">Baghdad</div>
+        <div class="loc-tag" id="loc1-tag">Headquarters</div>
+        <p class="loc-desc" id="loc1-desc">TBG's primary operations hub serving the Baghdad International Zone, diplomatic missions, government ministries, and international organisations throughout the capital.</p>
+      </div>
+      <div class="loc-card reveal reveal-delay-2">
+        <div class="loc-number" aria-hidden="true">02</div>
+        <div class="loc-city" id="loc2-city">Basra</div>
+        <div class="loc-tag" id="loc2-tag">Southern Operations</div>
+        <p class="loc-desc" id="loc2-desc">TBG's southern base supporting the oil &amp; gas sector, energy companies, and international clients active in Iraq's energy heartland.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     CONTACT
+══════════════════════════════════════════════════════ -->
+<section id="contact" class="sec sec-white">
+  <div class="container">
+    <div class="contact-grid">
+
+      <div>
+        <div class="sec-label">
+          <span class="sec-label-line"></span>
+          <span class="label" style="color:var(--gold);" id="ct-label">Get in Touch</span>
+        </div>
+        <h2 class="sec-title" id="ct-title">Let's Talk</h2>
+        <p style="font-size:0.9rem; color:var(--text-2); line-height:1.75; max-width:320px;" id="ct-sub">Tell us about your operational requirements and we'll design a service package tailored to your organisation.</p>
+
+        <div class="contact-methods">
+          <div class="cm">
+            <div class="cm-icon" aria-hidden="true">
+              <svg width="16" height="16" fill="none" stroke="#fff" stroke-width="1.8" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="cm-label" id="ct-email-l">Email</div>
+              <!-- TODO: update if email address changes -->
+              <a href="mailto:info@tbg-iraq.com" class="cm-val" id="ct-email-v">info@tbg-iraq.com</a>
+            </div>
+          </div>
+          <div class="cm">
+            <div class="cm-icon cm-icon-wa" aria-hidden="true">
+              <svg width="16" height="16" fill="#fff" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a10 10 0 00-5.031 1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26C.157 5.335 5.495 0 12.05 0c2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </div>
+            <div>
+              <div class="cm-label" id="ct-wa-l">WhatsApp</div>
+              <!-- href set dynamically from SITE_CONFIG.WA_NUMBER in <script> -->
+              <a href="#" class="cm-val" id="ct-wa-v">WhatsApp Us</a>
+            </div>
+          </div>
+          <div class="cm">
+            <div class="cm-icon" aria-hidden="true">
+              <svg width="16" height="16" fill="none" stroke="#fff" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+            </div>
+            <div>
+              <div class="cm-label" id="ct-loc-l">Headquarters</div>
+              <div class="cm-val" id="ct-loc-v">Baghdad, Iraq</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TODO: replace mailto: fallback with Formspree or real backend -->
+      <form class="contact-form" id="contact-form" novalidate>
+        <div class="form-2col">
+          <div class="f-group">
+            <label class="f-label" for="f-name" id="fl-name">Full Name</label>
+            <input class="f-input" type="text" id="f-name" name="name"
+              placeholder="Your name" autocomplete="name" maxlength="100" required />
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="f-org" id="fl-org">Organisation</label>
+            <input class="f-input" type="text" id="f-org" name="org"
+              placeholder="Company / Agency" autocomplete="organization" maxlength="100" />
+          </div>
+        </div>
+        <div class="f-group">
+          <label class="f-label" for="f-email" id="fl-email">Email</label>
+          <input class="f-input" type="email" id="f-email" name="email"
+            placeholder="you@organisation.com" autocomplete="email" maxlength="254" required />
+        </div>
+        <div class="f-group">
+          <label class="f-label" for="f-service" id="fl-service">Service of Interest</label>
+          <select class="f-select" id="f-service" name="service">
+            <option value="" disabled selected id="fo-def">Select a service...</option>
+            <option value="fm"        id="fo-fm">Facilities Management</option>
+            <option value="transport" id="fo-tr">Vehicle Maintenance &amp; Transport</option>
+            <option value="accom"     id="fo-ac">Secure Accommodation &amp; Office Leasing</option>
+            <option value="other"     id="fo-ot">Other / General Inquiry</option>
+          </select>
+        </div>
+        <div class="f-group">
+          <label class="f-label" for="f-msg" id="fl-msg">Message</label>
+          <textarea class="f-textarea" id="f-msg" name="message"
+            placeholder="Tell us about your requirements..." maxlength="2000" required></textarea>
+        </div>
+
+        <!-- Honeypot: hidden from real users; bots fill it and get silently rejected -->
+        <div class="f-honeypot" aria-hidden="true">
+          <label for="f-website">Website</label>
+          <input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <button type="submit" class="f-submit" id="f-submit-btn">Send Inquiry</button>
+        <div id="form-status" class="f-status" role="status" aria-live="polite"></div>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="foot-top">
+
+      <div class="foot-brand">
+        <a href="#" class="logo-badge logo-badge-foot" aria-label="TBG Support Services — home">
+          <img src="brand_assets/TBG-Logo-Full.png" alt="TBG Support Services" />
+        </a>
+        <p id="foot-desc">TBG Support Services Ltd — a family-owned Iraqi company providing facilities management, vehicle maintenance &amp; transport, and secure accommodation to international clients since 2008.</p>
+      </div>
+
+      <div>
+        <div class="foot-col-title" id="foot-nav-t">Navigate</div>
+        <nav class="foot-links" aria-label="Footer navigation">
+          <a href="#about"     class="foot-link" id="fl-about">About</a>
+          <a href="#services"  class="foot-link" id="fl-services">Services</a>
+          <a href="#clients"   class="foot-link" id="fl-clients">Clients</a>
+          <a href="#locations" class="foot-link" id="fl-locations">Locations</a>
+          <a href="#contact"   class="foot-link" id="fl-contact">Contact</a>
+        </nav>
+      </div>
+
+      <div>
+        <div class="foot-col-title" id="foot-svc-t">Services</div>
+        <nav class="foot-links" aria-label="Services navigation">
+          <a href="#services" class="foot-link" id="fl-svc1">Facilities Management</a>
+          <a href="#services" class="foot-link" id="fl-svc2">Vehicle Maintenance &amp; Transport</a>
+          <a href="#services" class="foot-link" id="fl-svc3">Secure Accommodation</a>
+          <a href="#services" class="foot-link" id="fl-svc4">Office Leasing</a>
+        </nav>
+      </div>
+
+    </div>
+
+    <div class="foot-bottom">
+      <div class="foot-copy" id="foot-copy">
+        &copy; <span id="foot-year"></span> Thunderbird Company for General Trading, Hotel &amp; Restaurant Management,<br/>
+        General Transportation, Contracting &amp; General Services Co. L.L.C. (TBG Support Services Ltd)
+      </div>
+      <div class="foot-iso" aria-label="ISO certifications">
+        <span class="foot-iso-badge">ISO 9001</span>
+        <span class="foot-iso-badge">ISO 14001</span>
+        <span class="foot-iso-badge">ISO 45001</span>
+        <span class="foot-iso-badge">ISO 22000</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════════════════
+     WHATSAPP FAB
+     href is set dynamically from SITE_CONFIG.WA_NUMBER below
+══════════════════════════════════════════════════════ -->
+<a id="wa-fab" href="#" target="_blank" rel="noopener noreferrer" aria-label="Contact TBG on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+/* ══════════════════════════════════════════════════════
+   SITE CONFIG
+   Update these values when contact details change.
+   WA_NUMBER: full international format, no + or spaces
+              e.g. 9647001234567  (964 = Iraq country code)
+══════════════════════════════════════════════════════ */
+const SITE_CONFIG = {
+  WA_NUMBER:     'YOURNUMBER',
+  CONTACT_EMAIL: 'info@tbg-iraq.com',
+};
+
+/* ══════════════════════════════════════════════════════
+   INIT
+══════════════════════════════════════════════════════ */
+document.getElementById('foot-year').textContent = new Date().getFullYear();
+
+const waUrl = `https://wa.me/${SITE_CONFIG.WA_NUMBER}`;
+document.getElementById('wa-fab').href  = waUrl;
+document.getElementById('ct-wa-v').href = waUrl;
+
+/* ══════════════════════════════════════════════════════
+   NAV — scroll shadow + hamburger
+══════════════════════════════════════════════════════ */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 10);
+}, { passive: true });
+
+const ham    = document.getElementById('hamburger');
+const mobNav = document.getElementById('mobile-nav');
+
+ham.addEventListener('click', () => {
+  const open = ham.classList.toggle('open');
+  ham.setAttribute('aria-expanded', open);
+  mobNav.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+
+mobNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  ham.classList.remove('open');
+  ham.setAttribute('aria-expanded', 'false');
+  mobNav.classList.remove('open');
+  document.body.style.overflow = '';
+}));
+
+/* ══════════════════════════════════════════════════════
+   CONTACT FORM
+   Uses mailto: as fallback.
+   TODO: replace window.location.href with fetch() to a
+   real endpoint (e.g. Formspree) once backend is ready.
+══════════════════════════════════════════════════════ */
+document.getElementById('contact-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  // Silently reject if honeypot field was filled (bot)
+  if (document.getElementById('f-website').value) return;
+
+  const f      = this;
+  const btn    = document.getElementById('f-submit-btn');
+  const status = document.getElementById('form-status');
+  const isAr   = document.documentElement.lang === 'ar';
+
+  btn.disabled    = true;
+  btn.textContent = isAr ? 'جارٍ الإرسال...' : 'Sending...';
+
+  const subj = encodeURIComponent('TBG Inquiry — ' + (f.service.value || 'General'));
+  const body = encodeURIComponent(
+    `Name: ${f.name.value}\nOrg: ${f.org.value}\nEmail: ${f.email.value}\nService: ${f.service.value}\n\n${f.message.value}`
+  );
+  window.location.href = `mailto:${SITE_CONFIG.CONTACT_EMAIL}?subject=${subj}&body=${body}`;
+
+  setTimeout(() => {
+    status.style.display = 'block';
+    status.textContent   = isAr ? 'تم فتح تطبيق البريد الإلكتروني.' : 'Your email client has been opened.';
+    btn.disabled         = false;
+    btn.textContent      = isAr ? 'إرسال الاستفسار' : 'Send Inquiry';
+  }, 700);
+});
+
+/* ══════════════════════════════════════════════════════
+   BILINGUAL (EN / AR)
+
+   T[]  — single-element translations
+          [selector, English, Arabic]
+          Uses textContent for plain strings,
+          innerHTML only when the string contains HTML tags.
+
+   TM[] — multi-element translations
+          [selector, [en…], [ar…]]
+          Matched in DOM order.
+══════════════════════════════════════════════════════ */
+const T = [
+  // ── Hero ──
+  ['#h-title',      'Essential Services<br/>for Businesses<br/><span class="accent">Operating in Iraq</span>', 'خدمات أساسية<br/>للشركات<br/><span class="accent">العاملة في العراق</span>'],
+  ['#h-sub',        'A family-owned Iraqi company delivering facilities management, vehicle maintenance & transport, and secure accommodation — so international organisations can focus on what matters.', 'شركة عراقية عائلية تقدم إدارة المرافق وصيانة المركبات والنقل والإقامة الآمنة — لتتمكن المنظمات الدولية من التركيز على ما يهمها.'],
+  ['#h-btn-svc',    'Our Services <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>', 'خدماتنا <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>'],
+  ['#h-btn-contact','Get in Touch',   'تواصل معنا'],
+  ['#hc-fm',        'Facilities Management', 'إدارة المرافق'],
+  ['#hc-tr',        'Vehicle & Transport',   'المركبات والنقل'],
+  ['#hc-ac',        'Accommodation',         'الإقامة'],
+  ['#hp-label',     'Our Three Divisions',   'أقسامنا الثلاثة'],
+  ['#hp-t1',        'Facilities Management', 'إدارة المرافق'],
+  ['#hp-s1',        'HVAC · Electrical · Civil Works · Cleaning · Pest Control', 'تكييف · كهرباء · أعمال مدنية · تنظيف · مكافحة الآفات'],
+  ['#hp-t2',        'Vehicle Maintenance & Transport',                            'صيانة المركبات والنقل'],
+  ['#hp-s2',        'Fleet Management · Logistics · Driver Services',             'إدارة الأسطول · اللوجستيات · خدمات السائقين'],
+  ['#hp-t3',        'Secure Accommodation & Office Leasing',                      'الإقامة الآمنة وتأجير المكاتب'],
+  ['#hp-s3',        'Baghdad · Basra · Conference · Warehousing',                 'بغداد · البصرة · قاعات المؤتمرات · التخزين'],
+  // ── Stats ──
+  ['#s-years', 'Years in Operation', 'سنوات التشغيل'],
+  ['#s-divs',  'Service Divisions',  'أقسام الخدمة'],
+  ['#s-iso',   'ISO Certifications', 'شهادات ISO'],
+  ['#s-loc',   'Iraqi Cities',       'مدن عراقية'],
+  // ── About ──
+  ['#aib-l1',      'Years Operating',                      'سنوات التشغيل'],
+  ['#aib-l2',      'ISO Certified',                        'معتمد ISO'],
+  ['#a-sec-label', 'About TBG',                            'عن TBG'],
+  ['#a-title',     'Local Roots.<br/>Global Standards.',   'جذور محلية.<br/>معايير عالمية.'],
+  ['#a-p1', 'Founded in 2008 by two brothers amid a war-torn Iraq, TBG is a family-owned service company built on deep local knowledge and proven delivery for international clients.', 'تأسست عام 2008 على يد شقيقين في عراق مزقته الحرب، TBG شركة خدمات عائلية مبنية على معرفة محلية عميقة وسجل حافل في الخدمة.'],
+  ['#a-p2', "TBG enjoys excellent knowledge of Iraq's local customs, logistics needs, and business environment — maintaining strong links with well-placed corporate entities.", 'تتمتع TBG بمعرفة ممتازة بالأعراف المحلية والاحتياجات اللوجستية وبيئة الأعمال في العراق.'],
+  ['#v1-t', 'Mission', 'المهمة'],
+  ['#v1-b', 'Best-in-class essential service support with professional dedication, enabling clients to focus on their core objectives.', 'دعم الخدمات الأساسية بأعلى المعايير والتزام مهني، لتمكين العملاء من التركيز على أهدافهم الأساسية.'],
+  ['#v2-t', 'Vision', 'الرؤية'],
+  ['#v2-b', 'A leading service provider in a prosperous Iraq — investing in local employment and career development for Iraqi youth and women.', 'مزود خدمات رائد في عراق مزدهر — يستثمر في التوظيف المحلي وتطوير مسار الشباب والمرأة العراقية.'],
+  ['#v3-t', 'Values', 'القيم'],
+  ['#v3-b', 'Respect, loyalty, responsibility, generosity, and hospitality — traditional Iraqi values at the core of every client engagement.', 'الاحترام والولاء والمسؤولية والكرم والضيافة — قيم عراقية أصيلة في صميم كل تعامل.'],
+  // ── Service pills ──
+  ['#svc1-p1', 'HVAC & Power',            'التكييف والطاقة'],
+  ['#svc1-p2', 'Electrical Systems',      'الأنظمة الكهربائية'],
+  ['#svc1-p3', 'Site Renovation',         'تجديد المواقع'],
+  ['#svc1-p4', 'Professional Cleaning',   'التنظيف الاحترافي'],
+  ['#svc1-p5', 'Waste Management',        'إدارة النفايات'],
+  ['#svc1-p6', 'Ground Maintenance',      'صيانة المناطق الخارجية'],
+  ['#svc2-p1', 'Fleet Management',        'إدارة الأسطول'],
+  ['#svc2-p2', 'Vehicle Servicing',       'صيانة المركبات'],
+  ['#svc2-p3', 'Personal Transport',      'النقل الشخصي'],
+  ['#svc2-p4', 'Logistics Coordination',  'تنسيق اللوجستيات'],
+  ['#svc3-p1', 'Serviced Residences',     'إقامة مُخدَّمة'],
+  ['#svc3-p2', 'Office Space',            'مساحات مكتبية'],
+  ['#svc3-p3', 'Conference Rooms',        'قاعات المؤتمرات'],
+  ['#svc3-p4', 'Warehousing',             'التخزين'],
+  ['#svc3-p5', 'Secured Parking',         'مواقف آمنة'],
+  // ── Location tags ──
+  ['#loc1-tag', 'Headquarters',        'المقر الرئيسي'],
+  ['#loc2-tag', 'Southern Operations', 'العمليات الجنوبية'],
+  // ── Services ──
+  ['#svc-sec-label', 'Our Services',         'خدماتنا'],
+  ['#svc-sec-title', 'Three Core Divisions',  'ثلاثة أقسام رئيسية'],
+  ['#svc-sec-sub',   'Comprehensive turnkey solutions for international organisations across Iraq — each division staffed by specialists in their field.', 'حلول متكاملة للمنظمات الدولية في العراق — كل قسم يضم متخصصين في مجالهم.'],
+  ['#svc1-cat',   'Facilities Management',                    'إدارة المرافق'],
+  ['#svc1-title', 'Keeping Your<br/>Operations Running',       'إبقاء عملياتك<br/>في أفضل حال'],
+  ['#svc1-desc',  'From HVAC and electrical systems to full site renovation and professional cleaning — TBG FM professionals integrate people, places, and processes to improve productivity and ensure a safe, compliant environment.', 'من أنظمة التكييف والكهرباء إلى تجديد المواقع والتنظيف الاحترافي — متخصصو إدارة المرافق في TBG يدمجون الأشخاص والأماكن والعمليات.'],
+  ['#svc2-cat',   'Vehicle Maintenance & Personal Transport',  'صيانة المركبات والنقل الشخصي'],
+  ['#svc2-title', 'Your Fleet.<br/>Your Schedule.',            'أسطولك.<br/>جدولك.'],
+  ['#svc2-desc',  'Full-spectrum fleet management, vehicle servicing, and professional personal transport across Iraq — ensuring your team moves safely, reliably, and on time, every time.', 'إدارة متكاملة للأسطول وصيانة المركبات والنقل الشخصي الاحترافي عبر العراق — لضمان تنقل فريقك بأمان وفي الوقت المحدد دائماً.'],
+  ['#svc3-cat',   'Secure Accommodation & Office Leasing',    'الإقامة الآمنة وتأجير المكاتب'],
+  ['#svc3-title', 'A Safe Base<br/>in Baghdad & Basra',       'قاعدة آمنة<br/>في بغداد والبصرة'],
+  ['#svc3-desc',  'Market-leading secured, serviced residences and office spaces — complete with Wi-Fi, gym, warehousing, conference rooms, and secured parking. Everything your team needs to live and work comfortably in Iraq.', 'إقامة مؤمّنة ومُخدَّمة ومساحات مكتبية رائدة في السوق — مع واي فاي وصالة رياضية ومستودعات وقاعات مؤتمرات ومواقف آمنة.'],
+  // ── Clients ──
+  ['#cl-sec-label', 'Work Experience',    'الخبرة العملية'],
+  ['#cl-title',     'Trusted Since 2008', 'موثوق به منذ 2008'],
+  ['#cl-sub',       'A long track record serving embassies, international businesses, defence contractors, NGOs, and oil & gas companies across Iraq — organized by service category.', 'سجل حافل في خدمة السفارات والشركات الدولية والمقاولين الدفاعيين والمنظمات غير الحكومية وشركات النفط والغاز في العراق.'],
+  ['#cat1', 'Facilities Management & Construction', 'إدارة المرافق والإنشاء'],
+  ['#cat2', 'Vehicle Maintenance & Transport',      'صيانة المركبات والنقل'],
+  ['#cat3', 'Business Support & Life Support',      'دعم الأعمال ودعم الحياة'],
+  // ── About card header ──
+  ['#alu-label', 'About Us',                                                    'من نحن'],
+  ['#alu-title', 'TBG Support<br>Services',                                    'TBG للخدمات<br>الداعمة'],
+  ['#alu-sub',   'Founded 2008 — Family-owned, Iraq-based, globally trusted.', 'تأسست 2008 — شركة عائلية عراقية موثوقة عالمياً.'],
+  // ── Certifications ──
+  ['#cert-label', 'Quality Assured',                          'جودة مضمونة'],
+  ['#cert-title', 'ISO Certified to International Standards', 'معتمد ISO وفق المعايير الدولية'],
+  ['#cert-sub',   'TBG holds four active ISO certifications — covering quality management, environmental responsibility, occupational health & safety, and food safety.', 'تحتفظ TBG بأربع شهادات ISO نشطة — تغطي إدارة الجودة والمسؤولية البيئية والصحة والسلامة المهنية وسلامة الغذاء.'],
+  ['#cname1', 'Quality Management',            'إدارة الجودة'],
+  ['#cname2', 'Environmental Management',      'الإدارة البيئية'],
+  ['#cname3', 'Occupational Health & Safety',  'الصحة والسلامة المهنية'],
+  ['#cname4', 'Food Safety Management',        'إدارة سلامة الغذاء'],
+  // ── Locations ──
+  ['#loc-label',  'Where We Operate',   'مناطق عملياتنا'],
+  ['#loc-title',  'Iraq-Wide Coverage', 'تغطية شاملة في العراق'],
+  ['#loc1-city',  'Baghdad', 'بغداد'],
+  ['#loc1-desc',  "TBG's primary operations hub serving the Baghdad International Zone, diplomatic missions, government ministries, and international organisations throughout the capital.", 'مركز عمليات TBG الرئيسي يخدم المنطقة الدولية وبغداد والبعثات الدبلوماسية والوزارات الحكومية والمنظمات الدولية في العاصمة.'],
+  ['#loc2-city',  'Basra', 'البصرة'],
+  ['#loc2-desc',  "TBG's southern base supporting the oil & gas sector, energy companies, and international clients active in Iraq's energy heartland.", 'قاعدة TBG الجنوبية تدعم قطاع النفط والغاز وشركات الطاقة والعملاء الدوليين في قلب الطاقة العراقي.'],
+  // ── Contact ──
+  ['#ct-label',    'Get in Touch',  'تواصل معنا'],
+  ['#ct-title',    "Let's Talk",    'لنتحدث'],
+  ['#ct-sub',      "Tell us about your operational requirements and we'll design a service package tailored to your organisation.", 'أخبرنا عن متطلباتك التشغيلية وسنصمم حزمة خدمات مخصصة لمنظمتك.'],
+  ['#ct-email-l',  'Email',             'البريد الإلكتروني'],
+  ['#ct-email-v',  'info@tbg-iraq.com', 'info@tbg-iraq.com'],
+  ['#ct-wa-l',     'WhatsApp',          'واتساب'],
+  ['#ct-wa-v',     'WhatsApp Us',       'راسلنا على واتساب'],
+  ['#ct-loc-l',    'Headquarters',      'المقر الرئيسي'],
+  ['#ct-loc-v',    'Baghdad, Iraq',     'بغداد، العراق'],
+  // ── Form ──
+  ['#fl-name',      'Full Name',             'الاسم الكامل'],
+  ['#fl-org',       'Organisation',          'المنظمة'],
+  ['#fl-email',     'Email',                 'البريد الإلكتروني'],
+  ['#fl-service',   'Service of Interest',   'الخدمة المطلوبة'],
+  ['#fl-msg',       'Message',               'الرسالة'],
+  ['#f-submit-btn', 'Send Inquiry',          'إرسال الاستفسار'],
+  ['#fo-def',       'Select a service...',   'اختر خدمة...'],
+  ['#fo-fm',        'Facilities Management',                 'إدارة المرافق'],
+  ['#fo-tr',        'Vehicle Maintenance & Transport',       'صيانة المركبات والنقل'],
+  ['#fo-ac',        'Secure Accommodation & Office Leasing', 'الإقامة الآمنة وتأجير المكاتب'],
+  ['#fo-ot',        'Other / General Inquiry',               'أخرى / استفسار عام'],
+  // ── Footer ──
+  ['#foot-desc',    'TBG Support Services Ltd — a family-owned Iraqi company providing facilities management, vehicle maintenance & transport, and secure accommodation to international clients since 2008.', 'TBG Support Services Ltd — شركة عراقية عائلية تقدم إدارة المرافق وصيانة المركبات والنقل والإقامة الآمنة للعملاء الدوليين منذ 2008.'],
+  ['#foot-nav-t',   'Navigate',  'التنقل'],
+  ['#foot-svc-t',   'Services',  'الخدمات'],
+  ['#fl-about',     'About',     'عن الشركة'],
+  ['#fl-services',  'Services',  'الخدمات'],
+  ['#fl-clients',   'Clients',   'العملاء'],
+  ['#fl-locations', 'Locations', 'المواقع'],
+  ['#fl-contact',   'Contact',   'تواصل'],
+  ['#fl-svc1',      'Facilities Management',           'إدارة المرافق'],
+  ['#fl-svc2',      'Vehicle Maintenance & Transport', 'صيانة المركبات والنقل'],
+  ['#fl-svc3',      'Secure Accommodation',            'الإقامة الآمنة'],
+  ['#fl-svc4',      'Office Leasing',                  'تأجير المكاتب'],
+];
+
+const TM = [
+  ['.nav-link',        ['About','Services','Clients','Locations','Contact'], ['عن الشركة','الخدمات','العملاء','المواقع','تواصل']],
+  ['.mob-link',        ['About','Services','Clients','Locations','Contact'], ['عن الشركة','الخدمات','العملاء','المواقع','تواصل']],
+  ['#nl-cta, .mob-cta',['Get in Touch','Get in Touch'],                      ['تواصل معنا','تواصل معنا']],
+];
+
+function containsHTML(str) { return str.includes('<'); }
+
+function setLang(lang) {
+  const html = document.documentElement;
+  html.lang = lang;
+  /* dir stays LTR — layout is identical in both languages, only text changes */
+
+  const isAr = lang === 'ar';
+
+  T.forEach(([sel, en, ar]) => {
+    const el  = document.querySelector(sel);
+    if (!el) return;
+    const val = isAr ? ar : en;
+    if (containsHTML(val)) { el.innerHTML  = val; }
+    else                   { el.textContent = val; }
+  });
+
+  TM.forEach(([sel, en, ar]) => {
+    const els  = document.querySelectorAll(sel);
+    const vals = isAr ? ar : en;
+    vals.forEach((v, i) => { if (els[i]) els[i].textContent = v; });
+  });
+
+  // ── Form placeholders ──
+  const PH = [
+    ['f-name',  'Your name',                      'اسمك'],
+    ['f-org',   'Company / Agency',               'الشركة / الجهة'],
+    ['f-email', 'you@organisation.com',           'you@organisation.com'],
+    ['f-msg',   'Tell us about your requirements...', 'أخبرنا عن متطلباتك...'],
+  ];
+  PH.forEach(([id, en, ar]) => {
+    const el = document.getElementById(id);
+    if (el) el.placeholder = isAr ? ar : en;
+  });
+
+  ['lang-btn', 'lang-btn-mob'].forEach(id => {
+    const b = document.getElementById(id);
+    if (b) b.textContent = isAr ? 'EN' : 'عربي';
+  });
+
+  document.title = isAr
+    ? 'TBG — الخدمات الأساسية للشركات في العراق'
+    : 'TBG Support Services — Facilities, Transport & Accommodation in Iraq';
+
+  localStorage.setItem('tbg-lang', lang);
+}
+
+['lang-btn', 'lang-btn-mob'].forEach(id => {
+  const b = document.getElementById(id);
+  if (b) b.addEventListener('click', () => {
+    setLang(document.documentElement.lang === 'ar' ? 'en' : 'ar');
+  });
+});
+
+if (localStorage.getItem('tbg-lang') === 'ar') setLang('ar');
+
+/* ══════════════════════════════════════════════════════
+   WEBGL HERO SHADER
+   Domain-warped FBM noise, black/gold palette, no mouse.
+
+   Colour reference (GLSL vec3 = r,g,b in 0–1 range):
+     deep  ≈ #020100  darkest base
+     navy  ≈ #0A0700  mid dark
+     mid   ≈ #170F04  warm dark
+     goldl ≈ #D4A017  bright gold highlight
+     gold  ≈ #B88B0B  deeper gold
+
+   To change colours: edit the vec3 declarations inside main().
+   To change speed:   edit the .12 and .09 multipliers on `t`.
+   To change detail:  increase/decrease the loop count in fbm().
+══════════════════════════════════════════════════════ */
+(function () {
+  const canvas = document.getElementById('hero-canvas');
+  if (!canvas) return;
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) { console.warn('WebGL not supported — hero canvas disabled.'); return; }
+
+  const VS = `attribute vec2 a; void main(){ gl_Position = vec4(a, 0., 1.); }`;
+
+  const FS = `
+    precision highp float;
+    uniform vec2  res;
+    uniform float t;
+
+    float h(vec2 p) { p = fract(p * vec2(127.1, 311.7)); p += dot(p, p + 17.5); return fract(p.x * p.y); }
+    float n(vec2 p) {
+      vec2 i = floor(p), f = fract(p);
+      f = f * f * (3. - 2. * f);
+      return mix(mix(h(i), h(i + vec2(1,0)), f.x), mix(h(i + vec2(0,1)), h(i + vec2(1,1)), f.x), f.y);
+    }
+    float fbm(vec2 p) {
+      float v = 0., a = .5;
+      mat2 m = mat2(.8, .6, -.6, .8);
+      for (int i = 0; i < 6; i++) { v += a * n(p); p = m * p * 2. + vec2(1.7 + float(i) * .4, 9.2 - float(i) * .3); a *= .5; }
+      return v;
+    }
+
+    void main() {
+      vec2 uv = gl_FragCoord.xy / res;
+      uv.y = 1. - uv.y;
+
+      vec2 q = vec2(fbm(uv * 2.), fbm(uv * 2. + vec2(5.2, 1.3)));
+      vec2 r = vec2(
+        fbm(uv * 2. + 4. * q + vec2(1.7, 9.2) + .12 * t),
+        fbm(uv * 2. + 4. * q + vec2(8.3, 2.8) + .09 * t)
+      );
+      float f = fbm(uv * 3. + 4. * r);
+
+      vec3 deep  = vec3(.010, .008, .004);
+      vec3 navy  = vec3(.040, .028, .008);
+      vec3 mid   = vec3(.090, .062, .016);
+      vec3 goldl = vec3(.831, .627, .090);
+      vec3 gold  = vec3(.722, .525, .043);
+
+      vec3 col = mix(deep, navy, clamp(f * f * 4., 0., 1.));
+      col = mix(col, mid, clamp(f * 2., 0., 1.) * .45);
+
+      float gv = smoothstep(.46, .54, f) * .85 + smoothstep(.60, .65, r.x) * .4;
+      gv = clamp(gv, 0., 1.);
+      col = mix(col, goldl, gv * .65);
+      col = mix(col, gold,  gv * gv * .38);
+
+      vec2 vc = uv - .5;
+      float vg = 1. - dot(vc * 1.4, vc);
+      col *= mix(.28, 1., clamp(vg * vg, 0., 1.));
+
+      gl_FragColor = vec4(col, 1.);
+    }
+  `;
+
+  function mkShader(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) {
+      console.warn('Shader compile error:', gl.getShaderInfoLog(s));
+      return null;
+    }
+    return s;
+  }
+
+  const prog = gl.createProgram();
+  gl.attachShader(prog, mkShader(gl.VERTEX_SHADER, VS));
+  gl.attachShader(prog, mkShader(gl.FRAGMENT_SHADER, FS));
+  gl.linkProgram(prog);
+  if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
+    console.warn('Shader link error:', gl.getProgramInfoLog(prog));
+    return;
+  }
+
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const aLoc = gl.getAttribLocation(prog, 'a');
+  gl.enableVertexAttribArray(aLoc);
+  gl.vertexAttribPointer(aLoc, 2, gl.FLOAT, false, 0, 0);
+
+  const uRes = gl.getUniformLocation(prog, 'res');
+  const uT   = gl.getUniformLocation(prog, 't');
+
+  let elapsed = 0, last = 0;
+
+  function resize() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width  = canvas.clientWidth  * dpr;
+    canvas.height = canvas.clientHeight * dpr;
+    gl.viewport(0, 0, canvas.width, canvas.height);
+  }
+  window.addEventListener('resize', resize, { passive: true });
+  resize();
+
+  function render(now) {
+    const dt = Math.min((now - last) / 1000, 0.05);
+    last = now;
+    elapsed += dt;
+    gl.useProgram(prog);
+    gl.uniform2f(uRes, canvas.width, canvas.height);
+    gl.uniform1f(uT, elapsed);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  requestAnimationFrame(render);
+})();
+</script>
+
+<!-- ── Scroll Reveal + Active Nav ── -->
+<script>
+(function() {
+  // Scroll reveal
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // Active nav section highlighting
+  const sections = ['about','services','clients','certifications','locations','contact']
+    .map(id => document.getElementById(id))
+    .filter(Boolean);
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(link => {
+          link.classList.toggle('nav-active', link.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+
+  sections.forEach(s => navObserver.observe(s));
+})();
+</script>
+
+<!-- ── ISO Certificate Lightbox ── -->
+<div id="cert-lightbox" role="dialog" aria-modal="true" aria-label="Certificate viewer" style="
+  display:none; position:fixed; inset:0; z-index:9999;
+  background:rgba(0,0,0,0.72); backdrop-filter:blur(6px);
+  align-items:center; justify-content:center; padding:24px;
+">
+  <div style="
+    position:relative; background:#fff; border-radius:12px;
+    padding:20px; box-shadow:0 32px 80px rgba(0,0,0,0.5);
+    max-width:90vw; max-height:92vh; display:flex; align-items:center; justify-content:center;
+  ">
+    <button id="cert-lb-close" aria-label="Close" style="
+      position:absolute; top:-16px; right:-16px;
+      background:#111; border:2px solid #fff;
+      color:#fff; font-size:1.2rem; line-height:1; width:36px; height:36px;
+      border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center;
+      transition:background 0.2s;
+    ">&times;</button>
+    <img id="cert-lb-img" src="" alt="" style="
+      max-width:calc(90vw - 40px); max-height:calc(92vh - 40px);
+      border-radius:4px; object-fit:contain; display:block;
+    " />
+  </div>
+</div>
+
+<script>
+(function() {
+  const lb      = document.getElementById('cert-lightbox');
+  const lbImg   = document.getElementById('cert-lb-img');
+  const lbClose = document.getElementById('cert-lb-close');
+
+  function openLb(src, alt) {
+    lbImg.src = src;
+    lbImg.alt = alt;
+    lb.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    lbClose.focus();
+  }
+  function closeLb() {
+    lb.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.cert-badge[data-cert-img]').forEach(badge => {
+    badge.style.cursor = 'pointer';
+    badge.addEventListener('click', () => openLb(badge.dataset.certImg, badge.dataset.certAlt));
+    badge.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLb(badge.dataset.certImg, badge.dataset.certAlt); } });
+  });
+
+  lbClose.addEventListener('click', closeLb);
+  lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+})();
+</script>
+</body>
+</html>
