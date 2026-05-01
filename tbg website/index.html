@@ -2032,12 +2032,15 @@ if (localStorage.getItem('tbg-lang') === 'ar') setLang('ar');
       vec2 uv = gl_FragCoord.xy / res;
       uv.y = 1. - uv.y;
 
-      vec2 q = vec2(fbm(uv * 2.), fbm(uv * 2. + vec2(5.2, 1.3)));
+      float aspect = res.x / res.y;
+      vec2 uvAr = vec2(uv.x * max(aspect, 0.5), uv.y);
+
+      vec2 q = vec2(fbm(uvAr * 2.), fbm(uvAr * 2. + vec2(5.2, 1.3)));
       vec2 r = vec2(
-        fbm(uv * 2. + 4. * q + vec2(1.7, 9.2) + .12 * t),
-        fbm(uv * 2. + 4. * q + vec2(8.3, 2.8) + .09 * t)
+        fbm(uvAr * 2. + 4. * q + vec2(1.7, 9.2) + .12 * t),
+        fbm(uvAr * 2. + 4. * q + vec2(8.3, 2.8) + .09 * t)
       );
-      float f = fbm(uv * 3. + 4. * r);
+      float f = fbm(uvAr * 3. + 4. * r);
 
       vec3 deep  = vec3(.010, .008, .004);
       vec3 navy  = vec3(.040, .028, .008);
