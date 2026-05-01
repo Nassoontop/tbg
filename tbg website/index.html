@@ -1009,6 +1009,16 @@
     @media (max-width: 768px) {
       .nav-links, .btn-cta-nav { display: none; }
       .hamburger { display: flex; }
+
+      /* Hero */
+      .hero-content { padding: 48px 0 40px; }
+      .hero-headline-wrap { padding-left: 16px; }
+      .hero-btns { flex-direction: column; gap: 10px; }
+      .hero-btns .btn-primary,
+      .hero-btns .btn-outline { width: 100%; justify-content: center; }
+      .hero-sub { margin-bottom: 32px; }
+
+      /* Hero stats */
       .hero-stats-inner { flex-wrap: wrap; }
       .stat-item {
         flex: 1 1 40%;
@@ -1017,10 +1027,46 @@
         padding: 16px;
       }
       .stat-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.1); }
+      .stat-n { font-size: 1.8rem; }
+
+      /* Services */
+      .svc-content-col { padding: 40px 20px; }
+      .svc-img-col { min-height: 240px; }
+      .svc-strip { min-height: auto; }
+
+      /* About */
+      .about-img-badge-inner { gap: 16px; }
+      .aib-num { font-size: 1.5rem; }
+
+      /* Section headers */
+      .sec-header { margin-bottom: 40px; }
+
+      /* Cert / clients */
+      .cert-inner { gap: 24px; }
+
+      /* Locations */
       .loc-grid  { grid-template-columns: 1fr; }
+
+      /* Contact form */
       .form-2col { grid-template-columns: 1fr; }
+
+      /* Footer */
       .foot-top  { grid-template-columns: 1fr; gap: 36px; }
+
+      /* Logo grid */
       .logo-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+
+      /* WhatsApp FAB — keep accessible above mobile nav */
+      #wa-fab { bottom: 24px; right: 16px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-chips { gap: 6px; }
+      .hero-chip  { font-size: 0.6rem; padding: 4px 8px; }
+      .stat-item  { flex: 1 1 100%; border-right: none; }
+      .stat-item:nth-child(odd) { border-right: none; }
+      .svc-content-col { padding: 32px 16px; }
+      .btn-lang { font-size: 0.68rem; padding: 6px 10px; }
     }
   </style>
 </head>
